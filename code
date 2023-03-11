@@ -1,0 +1,19 @@
+clc;
+disp('Parth T086');
+img = imread('D:\scilab-5.5.2\Images\Self300X400.jpg');
+img = rgb2gray(img); //Converting orignal image to grayscale
+
+D_img = double(img);
+Neg = uint8(255 - D_img);
+
+imshow(img);
+hist = imhist(img);
+plot2d3(hist);
+title('Original Image')
+
+Break = input('Display Image Negative: ');
+
+imshow(Neg);
+neg_hist = imhist(Neg);
+plot2d3(neg_hist);
+title('Negative of Image')
